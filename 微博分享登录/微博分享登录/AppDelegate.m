@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <ShareSDK/ShareSDK.h>
+#import <WeiboSDK.h>
 
 @interface AppDelegate ()
 
@@ -16,8 +18,30 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+#pragma mark 初始化
+    [ShareSDK registerApp:@"131f17e57ea90"];
+    [ShareSDK connectSinaWeiboWithAppKey:@"4238557796" appSecret:@"49d2934bb3763017f9555953e69fea66" redirectUri:@"http://i.qq.com" weiboSDKCls:[WeiboSDK class]];
+    
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -6,11 +6,13 @@ PODS:
     - ShareSDK2/Extend/SinaWeiboSDK
   - ShareSDK2/Core (2.12.5)
   - ShareSDK2/Extend/SinaWeiboSDK (2.12.5)
+  - ShareSDK2/UI/iPhoneAppRecommend (2.12.5)
 
 DEPENDENCIES:
   - MOBFoundation
   - ShareSDK2
   - ShareSDK2/Connection/SinaWeibo
+  - ShareSDK2/UI/iPhoneAppRecommend
 
 SPEC CHECKSUMS:
   MOBFoundation: 6cea4097eed468d6f3c5b3c358dcf2503e762bb3

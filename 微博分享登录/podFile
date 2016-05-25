@@ -1,4 +1,5 @@
 platform :ios, ‘9.0’
 pod 'ShareSDK2'
 pod 'MOBFoundation'
+pod 'ShareSDK2/UI/iPhoneAppRecommend'
 pod 'ShareSDK2/Connection/SinaWeibo'
